@@ -1,7 +1,7 @@
-import Router from '@koa/router';
+import Router, { RouterContext } from '@koa/router';
 import { BeError, BeSuccess } from '../util/response';
 
-const router = new Router();
+const router = new Router<RouterContext>();
 
 router.get('/', async function (ctx) {
     try {

@@ -4,7 +4,8 @@
     "description": "朱雀项目旨在实现前端资源的快速上线、快速回退、灰度验证的功能。",
     "main": "index.js",
     "scripts": {
-        "dev": "nodemon"
+        "dev": "nodemon",
+        "build": "node scripts/nginx.js && tsc"
     },
     "repository": {
         "type": "git",
@@ -20,8 +21,8 @@
     "dependencies": {
         "@koa/router": "^12.0.0",
         "amqplib": "^0.10.3",
-        "axios": "^1.4.0",
-        "config": "^3.3.9",
+        "axios": "1.4.0",
+        "config": "3.3.9",
         "koa": "2.14.2",
         "koa-body": "6.0.1",
         "lru-cache": "^10.0.0",
@@ -30,8 +31,9 @@
     },
     "devDependencies": {
         "@types/axios": "^0.14.0",
-        "nodemon": "^3.0.1",
-        "ts-node": "^10.9.1",
+        "@types/koa__router": "12.0.0",
+        "nodemon": "3.0.1",
+        "ts-node": "10.9.1",
         "typescript": "^5.1.6"
     }
 }
