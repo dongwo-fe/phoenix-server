@@ -18,10 +18,12 @@
     },
     "homepage": "https://github.com/dongwo-fe/phoenix-server#readme",
     "dependencies": {
+        "@koa/router": "^12.0.0",
         "amqplib": "^0.10.3",
         "axios": "^1.4.0",
         "config": "^3.3.9",
-        "express": "^4.18.2",
+        "koa": "2.14.2",
+        "koa-body": "6.0.1",
         "lru-cache": "^10.0.0",
         "mongodb": "^5.7.0",
         "nanoid": "^4.0.2"

@@ -1,14 +1,15 @@
-import express from 'express';
+import Koa from 'koa';
+import KoaBody from 'koa-body';
+import routers from './router';
 
-const app = express();
-const port = process.env.PORT || '8080';
+const app = new Koa();
 
-// 定义一个路由
-app.get('/', (req, res) => {
-    res.send('Hello, World!');
-});
+app.use(KoaBody({ multipart: true, formLimit: '20mb' }));
 
-// 启动服务器
-app.listen(port, () => {
+//加载路由
+app.use(routers.routes()).use(routers.allowedMethods());
+
+const port = process.env.PORT || '8082';
+app.listen(port, function () {
     console.log(`服务器运行在http://127.0.0.1:${port}`);
 });
