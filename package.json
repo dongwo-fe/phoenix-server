@@ -1,0 +1,35 @@
+{
+    "name": "phoenix-server",
+    "version": "1.0.0",
+    "description": "朱雀项目旨在实现前端资源的快速上线、快速回退、灰度验证的功能。",
+    "main": "index.js",
+    "scripts": {
+        "dev": "nodemon"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/dongwo-fe/phoenix-server.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/dongwo-fe/phoenix-server/issues"
+    },
+    "homepage": "https://github.com/dongwo-fe/phoenix-server#readme",
+    "dependencies": {
+        "amqplib": "^0.10.3",
+        "axios": "^1.4.0",
+        "config": "^3.3.9",
+        "express": "^4.18.2",
+        "lru-cache": "^10.0.0",
+        "mongodb": "^5.7.0",
+        "nanoid": "^4.0.2"
+    },
+    "devDependencies": {
+        "@types/axios": "^0.14.0",
+        "nodemon": "^3.0.1",
+        "ts-node": "^10.9.1",
+        "typescript": "^5.1.6"
+    }
+}
