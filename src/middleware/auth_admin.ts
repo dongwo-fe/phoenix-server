@@ -5,7 +5,7 @@ import { BeError } from '../util/response';
 export default async function AuthAdmin(ctx: Router.RouterContext, next: any) {
     try {
         if (!ctx.headers.token) throw new Error('未登录');
-        const uuid = await CheckToken(ctx.headers.token);
+        const uuid = await CheckToken(ctx.headers.token as string);
         if (!uuid) throw new Error('登录已失效');
         ctx.uuid = uuid;
         await next();
