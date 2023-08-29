@@ -1,4 +1,5 @@
 # 朱雀项目服务端
+![logo2](https://static.jrdaimao.com/cli_upload/b3136d3d-b3bc-4a63-827a-4fc5f6589cbf.png)
 
 朱雀项目旨在实现前端资源的快速上线、快速回退、灰度验证的功能。
 
