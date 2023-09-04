@@ -130,3 +130,5 @@ dist
 .pnp.*
 
 package-lock.json
+
+config/test.json

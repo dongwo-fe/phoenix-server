@@ -9,8 +9,10 @@ if (MQConfig) {
     require('../task');
 }
 //刷新内存数据
-InitWesiteCache();
-RefreshConfigCache();
+setTimeout(() => {
+    InitWesiteCache();
+    RefreshConfigCache();
+}, 1500);
 
 export function updateWebsiteFromHost(host: string) {
     // 有MQ配置走mq通知

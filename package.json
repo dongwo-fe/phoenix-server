@@ -4,7 +4,7 @@
     "description": "朱雀项目旨在实现前端资源的快速上线、快速回退、灰度验证的功能。",
     "main": "index.js",
     "scripts": {
-        "dev": "nodemon",
+        "dev": "cross-env NODE_ENV=test nodemon",
         "build": "node scripts/nginx.js && tsc"
     },
     "repository": {
@@ -32,13 +32,14 @@
         "lru-cache": "10.0.0",
         "mongodb": "5.7.0",
         "mysql2": "3.6.0",
-        "nanoid": "4.0.2",
+        "nanoid": "3.3.4",
         "sequelize": "6.32.1"
     },
     "devDependencies": {
         "@types/koa__router": "12.0.0",
         "nodemon": "3.0.1",
-        "ts-node": "10.9.1",
+        "cross-env": "7.0.3",
+        "ts-node": "8.8.2",
         "typescript": "5.1.6"
     }
 }

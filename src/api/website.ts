@@ -14,13 +14,9 @@ import {
     GetIndexCache,
 } from '../service/website';
 import AythServer from '../middleware/auth_server';
-import fs from 'fs';
-import path from 'path';
 import Cros from '../middleware/cros';
 
 const router = new Router();
-
-const setHtml = fs.readFileSync(path.join(process.cwd(), './template/set.html'));
 
 router.get('/', AuthAdmin, async function (ctx) {
     const { page, username, type, status, env, pid, host } = ctx.query;
@@ -135,11 +131,6 @@ router.all('/config', Cros, async function (ctx) {
     } catch (error) {
         ctx.body = BeError(error.message);
     }
-});
-
-router.get('/set', function (ctx) {
-    ctx.set('content-type', 'text/html');
-    ctx.body = setHtml;
 });
 
 export default router.routes();
