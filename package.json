@@ -19,26 +19,26 @@
     },
     "homepage": "https://github.com/dongwo-fe/phoenix-server#readme",
     "dependencies": {
-        "@koa/router": "^12.0.0",
-        "amqplib": "^0.10.3",
+        "@koa/router": "12.0.0",
+        "amqplib": "0.10.3",
         "axios": "1.4.0",
-        "cheerio": "^1.0.0-rc.12",
+        "cheerio": "1.0.0-rc.12",
         "config": "3.3.9",
-        "cron": "^2.4.1",
-        "dayjs": "^1.11.9",
+        "cron": "2.4.1",
+        "dayjs": "1.11.9",
         "ioredis": "^5.3.2",
         "koa": "2.14.2",
         "koa-body": "6.0.1",
-        "lru-cache": "^10.0.0",
-        "mongodb": "^5.7.0",
-        "mysql2": "^3.6.0",
-        "nanoid": "^4.0.2",
-        "sequelize": "^6.32.1"
+        "lru-cache": "10.0.0",
+        "mongodb": "5.7.0",
+        "mysql2": "3.6.0",
+        "nanoid": "4.0.2",
+        "sequelize": "6.32.1"
     },
     "devDependencies": {
         "@types/koa__router": "12.0.0",
         "nodemon": "3.0.1",
         "ts-node": "10.9.1",
-        "typescript": "^5.1.6"
+        "typescript": "5.1.6"
     }
 }
