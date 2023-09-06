@@ -92,12 +92,12 @@ router.post('/del', AuthAdmin, async function (ctx) {
 });
 
 router.post('/upload', AythServer, async function (ctx) {
-    const { html, env, pathName, ip } = ctx.request.body;
+    const { html, env, pathName } = ctx.request.body;
     try {
         if (!html) throw new Error('无内容');
         if (!env) throw new Error('无环境');
 
-        const data = await SaveIndex(html, env, pathName, ip);
+        const data = await SaveIndex(html, env, pathName);
         ctx.body = BeSuccess(data);
     } catch (error) {
         console.log(error);
@@ -112,12 +112,6 @@ router.get('/entry', async function (ctx) {
         const data = await GetIndexCache(host as string, ip as string, tell as string);
 
         let html: string = await SetWebsiteConfig(host as string, data.html);
-
-        // 非全量情况下替换灰度标识
-        if (data.type !== 0) {
-            html = html.replace('window.gray=""', 'window.gray="grayscale"');
-            html = html.replace('window.gray = ""', 'window.gray="grayscale"');
-        }
         ctx.body = BeSuccess({ html, md5: data.md5 });
     } catch (error) {
         ctx.body = BeError(error.message);

@@ -245,7 +245,7 @@ export async function DeleteWebsite(uuid: string, id: number) {
     return WebsiteModel.update(opts, id);
 }
 // 将上传的网页内容保存到数据库中
-export async function SaveIndex(html: string, env: string, pathName: string, ip?: string) {
+export async function SaveIndex(html: string, env: string, pathName: string) {
     const envModel = await FindEnvHost(pathName);
     if (!envModel) throw new Error('没有绑定的域名');
     if (envModel.env.toLocaleLowerCase() !== env.toLocaleLowerCase()) throw new Error('环境不一致');
