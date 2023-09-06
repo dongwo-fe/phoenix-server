@@ -15,6 +15,7 @@ module.exports = {
     redis: {
         host: '127.0.0.1',
         password: '123456abc',
+        port: 18002,
     },
     mq: null,
     // 钉钉登录
