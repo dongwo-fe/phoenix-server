@@ -44,7 +44,7 @@ export async function LoginUser(username: string, pwd: string) {
     if (model.status === 0) throw new Error('用户已禁用');
     if (model.password !== getMD5(pwd)) throw new Error('密码不正确');
     const token = await getToken(model.uuid);
-    return { uuid: model.uuid, token };
+    return { uuid: model.uuid, token, uidentity: model.uidentity };
 }
 
 // 系统自动登录逻辑

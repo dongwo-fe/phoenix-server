@@ -117,7 +117,7 @@ export default {
         });
     },
     findOne(username: string) {
-        return Users.findOne({ where: { username }, attributes: ['username', 'uuid', 'password', 'status'] });
+        return Users.findOne({ where: { username }, attributes: ['username', 'uuid', 'password', 'uidentity', 'status'] });
     },
     findOneUuid(uuid: string) {
         return Users.findOne({ where: { uuid }, attributes: ['username', 'uuid', 'password'] });
