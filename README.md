@@ -12,3 +12,9 @@
 5. 灰度能力建设，支持根据ip设置灰度内容，ip默认支持多级ip。
 6. 保存源文件，生成多种灰度文件，可以渐进发布。
 7. 增加域名泛解析和主动生成域名对应的网站。
+
+## 示例
+
+可以查看网站示例：[demo.guofangchao.com](http://demo.guofangchao.com)
+
+网站目前加入了测试用的页面，[phoenix.guofangchao.com](http://phoenix.guofangchao.com)
