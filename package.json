@@ -5,6 +5,7 @@
     "main": "index.js",
     "scripts": {
         "dev": "cross-env NODE_ENV=test nodemon",
+        "sql": "cross-env NODE_ENV=test ts-node src/model/index.ts",
         "build": "node scripts/nginx.js && tsc"
     },
     "repository": {

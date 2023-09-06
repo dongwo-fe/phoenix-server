@@ -7,7 +7,6 @@ class Users extends Model {
     username: string;
     nickname: string;
     status: number;
-    roles: string;
     tell: string;
     uidentity: string;
     avatar: string;
@@ -54,11 +53,6 @@ Users.init(
             type: DataTypes.STRING(200),
             defaultValue: '',
             comment: '头像',
-        },
-        roles: {
-            type: DataTypes.TEXT,
-            defaultValue: '',
-            comment: '权限',
         },
         intro: {
             type: DataTypes.STRING(200),
@@ -119,11 +113,11 @@ export default {
             where: {
                 uuid,
             },
-            attributes: ['uuid', 'username', 'nickname', 'avatar', 'roles', 'intro', 'status', 'uidentity'],
+            attributes: ['uuid', 'username', 'nickname', 'avatar', 'intro', 'status', 'uidentity'],
         });
     },
     findOne(username: string) {
-        return Users.findOne({ where: { username }, attributes: ['username', 'uuid', 'password', 'status', 'roles'] });
+        return Users.findOne({ where: { username }, attributes: ['username', 'uuid', 'password', 'status'] });
     },
     findOneUuid(uuid: string) {
         return Users.findOne({ where: { uuid }, attributes: ['username', 'uuid', 'password'] });
@@ -159,7 +153,7 @@ export default {
             order: [['createdAt', 'desc']],
             limit: 20,
             offset: (pageindex - 1) * 20,
-            attributes: ['uuid', 'nickname', 'username', 'status', 'o_username', 'o_nickname', 'updatedAt', 'roles', 'uidentity', 'tell'],
+            attributes: ['uuid', 'nickname', 'username', 'status', 'o_username', 'o_nickname', 'updatedAt', 'uidentity', 'tell'],
         });
     },
     delList(ids: string[]) {

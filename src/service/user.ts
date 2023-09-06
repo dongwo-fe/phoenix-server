@@ -123,11 +123,6 @@ export async function UpdateUser(ouuid: string, uuid: string, status: number) {
     if (!opar) throw new Error('操作用户不存在');
     await UserModel.update({ o_username: opar.username, o_nickname: opar.nickname, status }, uuid);
 }
-export async function UpdateUserRoles(ouuid: string, uuid: string, roles: string) {
-    const opar = await GetUserInfo(ouuid);
-    if (!opar) throw new Error('操作用户不存在');
-    await UserModel.update({ o_username: opar.username, o_nickname: opar.nickname, roles }, uuid);
-}
 
 export async function GetUserList(pageindex: string | undefined, username, o_username, status) {
     return UserModel.getlist(Number(pageindex || 1), username, o_username, status);

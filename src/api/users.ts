@@ -1,6 +1,6 @@
 import Router from '@koa/router';
 import AuthAdmin from '../middleware/auth_admin';
-import { AddUser, GetUserInfo, GetUserList, DeleteUserList, UpdateUser, UpdateUserRoles } from '../service/user';
+import { AddUser, GetUserInfo, GetUserList, DeleteUserList, UpdateUser } from '../service/user';
 import { BeError, BeSuccess } from '../util/response';
 
 const router = new Router();
@@ -66,17 +66,6 @@ router.post('/update', AuthAdmin, async function (ctx) {
     const { uuid, status } = ctx.request.body;
     try {
         await UpdateUser(ctx.uuid, uuid, status ? 1 : 0);
-        ctx.body = BeSuccess();
-    } catch (error) {
-        console.log(error);
-        ctx.body = BeError(error.message);
-    }
-});
-router.post('/roles', AuthAdmin, async function (ctx) {
-    const { uuid, roles } = ctx.request.body;
-    try {
-        if (!uuid) throw new Error('用户不存在');
-        await UpdateUserRoles(ctx.uuid, uuid, roles);
         ctx.body = BeSuccess();
     } catch (error) {
         console.log(error);
