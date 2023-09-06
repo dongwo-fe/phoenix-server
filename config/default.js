@@ -5,10 +5,10 @@ module.exports = {
     //开发环境数据库
     db: {
         host: '127.0.0.1',
-        port: 3306,
-        database: 'phoenis',
-        user: 'phoenis',
-        password: 'vlW0#rycxoy3eOdBNMwD',
+        port: 18001,
+        database: 'phoenis_db',
+        user: 'phoenis_db',
+        password: 'pS2ddzdkbjd6DMhy',
         connectionLimit: 2,
     },
     //开发环境，普通redis配置
