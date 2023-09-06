@@ -17,4 +17,6 @@
 
 可以查看网站示例：[demo.guofangchao.com](http://demo.guofangchao.com)
 
+用户名密码 admin admin
+
 网站目前加入了测试用的页面，[phoenix.guofangchao.com](http://phoenix.guofangchao.com)
