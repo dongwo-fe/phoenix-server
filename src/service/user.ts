@@ -121,7 +121,7 @@ export async function AddUser(uuid: string, username: string, password: string, 
 export async function UpdateUser(ouuid: string, uuid: string, status: number) {
     const opar = await GetUserInfo(ouuid);
     if (!opar) throw new Error('操作用户不存在');
-    await UserModel.update({ o_username: opar.username, o_nickname: opar.nickname, status }, uuid);
+    // await UserModel.update({ o_username: opar.username, o_nickname: opar.nickname, status }, uuid);
 }
 
 export async function GetUserList(pageindex: string | undefined, username, o_username, status) {
@@ -130,8 +130,8 @@ export async function GetUserList(pageindex: string | undefined, username, o_use
 
 export async function DeleteUserList(ids: string[], uuid: string) {
     if (ids.length === 0) return;
-    await UserModel.delList(ids);
-    UserLogs('删除用户', '', ids.join(), 1, uuid);
+    // await UserModel.delList(ids);
+    // UserLogs('删除用户', '', ids.join(), 1, uuid);
 }
 export async function UpdatePassword(uuid: string, pwd1, pwd2) {
     const model = await UserModel.findOneUuid(uuid);
